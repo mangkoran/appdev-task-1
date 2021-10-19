@@ -4,22 +4,20 @@ require_once('config.php');
 ?>
 <?php
 
-if(isset($_POST)) {
-
-    $firstname = $_POST['firstname'];
-    $lastname = $_POST['lastname'];
+if (isset($_POST)) {
+    $username = $_POST['username'];
     $email = $_POST['email'];
-    $phonenumber = $_POST['phonenumber'];
     $password = sha1($_POST['password']);
 
-        $sql = "INSERT INTO users (firstname, lastname, email, phonenumber, password ) VALUES(?,?,?,?,?)";
-        $stmtinsert = $db->prepare($sql);
-        $result = $stmtinsert->execute([$firstname, $lastname, $email, $phonenumber, $password]);
-        if($result) {
-            echo 'Successfully saved.';
-        } else {
-            echo 'There were erros while saving the data.';
-        }
+    $sql = "INSERT INTO users (username, email, password ) VALUES(?,?,?)"; // positional arg
+    $stmtinsert = $db->prepare($sql); // https://www.php.net/manual/en/pdo.prepare.php
+    $result = $stmtinsert->execute([$username, $email, $password]); // https://www.php.net/manual/en/pdostatement.execute.php
+                                                                    // short array syntax
+    if ($result) {
+        echo 'Successfully saved.';
+    } else {
+        echo 'There were erros while saving the data.';
+    }
 } else {
     echo 'No data';
 }
