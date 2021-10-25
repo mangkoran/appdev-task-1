@@ -44,7 +44,7 @@ require_once('config.php');
                             </div>
                             <input type="password" name="password" id="password" class="form-control rounded-0 input_user" required>
                         </div>
-                        <input class="btn btn-primary" type="submit" id="register" name="create" value="Sign Up">
+                        <input class="btn btn-primary" type="submit" id="register" name="button" value="Sign Up">
                     </form>
                 </div>
             </div>

@@ -14,7 +14,6 @@ if (isset($_SESSION['userlogin'])) {
     <title>Programming Knowledge Login</title>
     <link rel="stylesheet" type="text/css" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
 
 <body>
@@ -48,10 +47,11 @@ if (isset($_SESSION['userlogin'])) {
                                 <label class="custom-control-label" for="customControlInline">Remember me</label>
                             </div>
                         </div>
+                        <!-- <div class="d-flex mb-4 login_container">
+                            <button type="button" name="button" id="login" class="btn btn-primary">Login</button>
+                        </div> -->
+                        <input class="btn btn-primary mb-4" type="submit" id="login" name="button" value="Login">
                     </form>
-                </div>
-                <div class="d-flex mb-4 login_container">
-                    <button type="button" name="button" id="login" class="btn btn-primary">Login</button>
                 </div>
                 <div class="mb-4">
                     <div class="d-flex justify-content-center links">
@@ -66,34 +66,31 @@ if (isset($_SESSION['userlogin'])) {
     <script>
         $(function() {
             $('#login').click(function(e) {
-
                 var valid = this.form.checkValidity();
+                // console.log(valid);
 
                 if (valid) {
                     var username = $('#username').val();
                     var password = $('#password').val();
-                }
-
-                e.preventDefault();
-
-                $.ajax({
-                    type: 'POST',
-                    url: 'jslogin.php',
-                    data: {
-                        username: username,
-                        password: password
-                    },
-                    success: function(data) {
-                        alert(data);
-                        if ($.trim(data) === "1") {
-                            setTimeout(' window.location.href =  "index.php"', 1000);
+                    e.preventDefault();
+                    $.ajax({
+                        type: 'POST',
+                        url: 'jslogin.php',
+                        data: {
+                            username: username,
+                            password: password
+                        },
+                        success: function(data) {
+                            alert(data);
+                            if ($.trim(data) === "1") {
+                                setTimeout('window.location.href =  "index.php"', 1000);
+                            }
+                        },
+                        error: function(data) {
+                            alert('Error!');
                         }
-                    },
-                    error: function(data) {
-                        alert('there were erros while doing the operation.');
-                    }
-                });
-
+                    });
+                }
             });
         });
     </script>
