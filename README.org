@@ -41,6 +41,7 @@ Make sure you have installed yarn
 3. yarn install
 4. docker compose up
 5. localhost:80 -> app, localhost:8080 -> PMA
+6. Import "users.sql"
 
 *** Using XAMPP / Laragon
 
@@ -48,4 +49,17 @@ Disclaimer: I do not use XAMPP / Laragon etc. because it is not advised to use t
 
 1. Open "config.php"
 2. Change $db_host, $db_port according XAMPP / Laragon instruction
-3. Follow XAMPP / Laragon instruction
+3. Follow XAMPP / Laragon instruction until app is running
+4. Import "users.sql"
+
+** Note
+
+*** Account
+
+Password is stored in it's hashed form
+
+| Username | Password  |
+|----------+-----------|
+| user     | password  |
+| user2    | password2 |
+| user3    | password3 |
