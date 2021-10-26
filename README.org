@@ -3,6 +3,10 @@ Matric: A19EC0216
 
 * Login/Sign Up App
 
+** Info
+
+Repo: https://github.com/mangkoran/appdev-task-1
+
 ** Tech Stacks
 
 *** Front End
