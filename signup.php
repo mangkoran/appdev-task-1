@@ -6,7 +6,7 @@ require_once('config.php');
 <html>
 
 <head>
-    <title>User Registration</title>
+    <title>Sign Up</title>
     <link rel="stylesheet" type="text/css" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 </head>
@@ -56,11 +56,11 @@ require_once('config.php');
     <script type="text/javascript">
         $(function() {
             $('#signup').click(function(e) {
-                var valid = this.form.checkValidity();
+                let valid = this.form.checkValidity();
                 if (valid) {
-                    var username = $('#username').val();
-                    var email = $('#email').val();
-                    var password = $('#password').val();
+                    let username = $('#username').val();
+                    let email = $('#email').val();
+                    let password = $('#password').val();
                     e.preventDefault();
                     $.ajax({
                         type: 'POST',
