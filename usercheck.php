@@ -28,4 +28,5 @@ if (password_verify($password, $hash)) {
     $_SESSION['userlogin'] = $user["username"];
 } else {
     header("HTTP/1.1 500 Internal Server Error");
+    echo "Error: Username or Password did not match";
 }

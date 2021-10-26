@@ -10,10 +10,10 @@ $dsn = "mysql:host=$db_host;port=$db_port;dbname=$db_name;charset=utf8";
 $db = new PDO($dsn, $db_user, $db_pass);
 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-//  users table SQL
-//   EATE TABLE `users` (
+// sql statement
+// CREATE TABLE `users` (
 //   `username` varchar(16) NOT NULL,
 //   `email` varchar(16) NOT NULL,
-//   `password` varchar(40) NOT NULL,
+//   `password` varchar(255) NOT NULL,
 //   PRIMARY KEY (`username`)
 // ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4

@@ -19,7 +19,8 @@ if (isset($_GET['logout'])) {
 <head>
     <title>Login</title>
     <link rel="stylesheet" type="text/css" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous"> -->
+    <link rel="stylesheet" type="text/css" href="./node_modules/@fortawesome/fontawesome-free/css/all.min.css">
 </head>
 
 <body>
@@ -28,7 +29,7 @@ if (isset($_GET['logout'])) {
             <div>
                 <div class="d-flex justify-content-center mb-4">
                     <?php
-                        echo "<h1>Hello, " . $_SESSION["userlogin"] . "!</h1>"
+                    echo "<h1>Hello, " . $_SESSION["userlogin"] . "!</h1>"
                     ?>
                 </div>
                 <div class="d-flex justify-content-center">
