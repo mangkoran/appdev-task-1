@@ -78,7 +78,7 @@ require_once('config.php');
                                 // 'text': data,
                                 'icon': 'success'
                             })
-                            // setTimeout('window.location.href = "login.php"', 1000);
+                            setTimeout('window.location.href = "index.php"', 1000);
                         },
                         error: function(data) {
                             console.log(data);
